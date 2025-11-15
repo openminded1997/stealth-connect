@@ -89,32 +89,23 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center space-y-8">
             {/* Glass Card */}
             <div className="glass dark:glass-dark rounded-3xl p-12 shadow-2xl">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Ваша приватность —{" "}
                 <span className="text-gradient">наш приоритет</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto px-4">
                 Премиум VPN-сервис для безопасного и свободного интернета
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button 
                   size="lg" 
-                  className="gradient-primary text-white font-semibold text-lg px-8 py-6 rounded-xl hover:opacity-90 transition-all"
+                  className="gradient-primary text-white font-semibold text-base sm:text-lg px-8 sm:px-12 py-6 rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
                   onClick={() => window.open(telegramBotUrl, '_blank')}
                 >
                   Получить доступ
                   <ArrowRight className="ml-2" />
-                </Button>
-                
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="font-semibold text-lg px-8 py-6 rounded-xl border-2 hover:bg-accent/10"
-                  onClick={() => window.open(telegramBotUrl, '_blank')}
-                >
-                  Узнать больше
                 </Button>
               </div>
             </div>
@@ -133,18 +124,18 @@ const Index = () => {
             Почему выбирают нас
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="glass dark:glass-dark rounded-2xl p-8 hover:scale-105 transition-transform duration-300"
+                className="glass dark:glass-dark rounded-2xl p-6 sm:p-8 hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
               >
-                <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300 shadow-lg">
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -152,21 +143,21 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 relative">
+      <section className="py-16 sm:py-24 relative">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">
             Тарифные планы
           </h2>
-          <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-12 sm:mb-16 max-w-2xl mx-auto px-4">
             Выберите оптимальный план для ваших потребностей
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               <Card
                 key={index}
-                className={`relative glass dark:glass-dark border-2 hover:scale-105 transition-transform duration-300 ${
-                  plan.popular ? "border-primary shadow-2xl" : "border-border"
+                className={`relative glass dark:glass-dark border-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 ${
+                  plan.popular ? "border-primary shadow-2xl scale-105" : "border-border"
                 }`}
               >
                 {plan.popular && (
@@ -176,17 +167,17 @@ const Index = () => {
                 )}
                 
                 <CardHeader className="text-center">
-                  <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                  <CardDescription className="text-lg">{plan.period}</CardDescription>
+                  <CardTitle className="text-xl sm:text-2xl mb-2">{plan.name}</CardTitle>
+                  <CardDescription className="text-base sm:text-lg">{plan.period}</CardDescription>
                 </CardHeader>
                 
                 <CardContent className="text-center space-y-6">
                   <div>
-                    <div className="text-5xl font-bold text-gradient mb-2">
+                    <div className="text-4xl sm:text-5xl font-bold text-gradient mb-2">
                       {plan.price}
                     </div>
                     {plan.pricePerMonth && (
-                      <p className="text-muted-foreground">{plan.pricePerMonth}</p>
+                      <p className="text-sm sm:text-base text-muted-foreground">{plan.pricePerMonth}</p>
                     )}
                   </div>
                   
@@ -194,7 +185,7 @@ const Index = () => {
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <Shield className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
+                        <span className="text-sm sm:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -221,22 +212,22 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative">
+      <section className="py-16 sm:py-24 relative">
         <div className="ambience-red absolute inset-0 z-0" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="glass dark:glass-dark rounded-3xl p-12 md:p-16 max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="glass dark:glass-dark rounded-3xl p-8 sm:p-12 md:p-16 max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Начните прямо сейчас
             </h2>
             
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Свяжитесь с нами в Telegram для получения персонального тарифа и подробной консультации
             </p>
             
             <Button 
               size="lg"
-              className="gradient-primary text-white font-semibold text-lg px-12 py-6 rounded-xl hover:opacity-90 transition-all"
+              className="gradient-primary text-white font-semibold text-base sm:text-lg px-8 sm:px-12 py-6 rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
               onClick={() => window.open(telegramBotUrl, '_blank')}
             >
               Открыть Telegram бот
