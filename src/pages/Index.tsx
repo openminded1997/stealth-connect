@@ -166,7 +166,7 @@ const Index = () => {
             {plans.map((plan, index) => (
               <Card
                 key={index}
-                className={`relative glass dark:glass-dark border-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 ${
+                className={`relative glass dark:glass-dark border-2 hover:scale-105 hover:shadow-2xl transition-all duration-300 flex flex-col ${
                   plan.popular ? "border-primary shadow-2xl scale-105" : "border-border"
                 }`}
               >
@@ -181,7 +181,7 @@ const Index = () => {
                   <CardDescription className="text-base sm:text-lg">{plan.period}</CardDescription>
                 </CardHeader>
                 
-                <CardContent className="text-center space-y-6">
+                <CardContent className="text-center space-y-6 flex-grow">
                   <div>
                     <div className="text-4xl sm:text-5xl font-bold text-gradient mb-2">
                       {plan.price}
@@ -201,7 +201,7 @@ const Index = () => {
                   </ul>
                 </CardContent>
                 
-                <CardFooter>
+                <CardFooter className="mt-auto">
                   <Button
                     className={`w-full ${
                       plan.popular
