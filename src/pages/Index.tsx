@@ -4,18 +4,18 @@ import { useTheme } from "next-themes";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Index = () => {
-  const telegramBotUrl = "https://t.me/your_vpn_bot"; // Замените на ссылку вашего бота
+  const telegramBotUrl = "https://example.com"; // Замените на ссылку вашего бота
   const { theme, setTheme } = useTheme();
 
   const features = [
     {
       icon: Shield,
       title: "Максимальная защита",
-      description: "Военное шифрование данных для полной анонимности",
+      description: "Шифрование данных для полной анонимности",
     },
     {
       icon: Zap,
-      title: "Высокая скорость",
+      title: "Стабильное соединение",
       description: "Серверы нового поколения без потери скорости",
     },
     {
