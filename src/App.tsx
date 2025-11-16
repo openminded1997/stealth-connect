@@ -1,3 +1,5 @@
+
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,16 +11,21 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// 💡 Определяем базовый путь, который совпадает с именем репозитория
+// Убедитесь, что 'stealth-connect' совпадает с именем вашего репозитория
+const BASE_PATH = "/stealth-connect"; 
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        {/* 🔑 КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: Добавляем basename */}
+        <BrowserRouter basename={BASE_PATH}>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* ... */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
