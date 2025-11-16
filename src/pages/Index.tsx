@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Zap, Globe, Lock, ArrowRight, Sun, Moon, Server, Cloud } from "lucide-react";
+import { Shield, Zap, Globe, Eye, Wifi, Lock, ArrowRight, Sun, Moon, Server, Cloud } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -11,7 +11,17 @@ const Index = () => {
     {
       icon: Shield,
       title: "Максимальная защита",
-      description: "Шифрование данных для полной анонимности",
+      description: "Военное шифрование данных для полной приватности",
+    },
+    {
+      icon: Wifi,
+      title: "Безопасный Wi-Fi",
+      description: "Защита в публичных сетях Wi-Fi от хакеров и кражи данных",
+    },
+    {
+      icon: Eye,
+      title: "Защита от слежки",
+      description: "Скрываем ваш реальный IP-адрес от рекламодателей и трекеров",
     },
     {
       icon: Zap,
@@ -25,8 +35,8 @@ const Index = () => {
     },
     {
       icon: Lock,
-      title: "Без логов",
-      description: "Мы не храним данные о вашей активности",
+      title: "Строгая конфиденциальность",
+      description: "Минимальный сбор данных и прозрачная политика",
     },
   ];
 
@@ -124,18 +134,18 @@ const Index = () => {
             Почему выбирают нас
           </h2>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="glass dark:glass-dark rounded-2xl p-6 sm:p-8 hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
+                className="glass dark:glass-dark rounded-2xl p-6 sm:p-8 hover:scale-105 hover:shadow-2xl transition-all duration-300 group border-2 border-border/50"
               >
-                <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300 shadow-lg">
-                  <feature.icon className="w-7 h-7 text-white" />
+                <div className="w-12 h-12 rounded-lg bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-all duration-300">
+                  <feature.icon className="w-6 h-6 text-primary" />
                 </div>
                 
                 <h3 className="text-lg sm:text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-sm sm:text-base text-muted-foreground">{feature.description}</p>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
