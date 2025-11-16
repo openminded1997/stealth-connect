@@ -1,5 +1,3 @@
-
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,8 +9,6 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// 💡 Определяем базовый путь, который совпадает с именем репозитория
-// Убедитесь, что 'stealth-connect' совпадает с именем вашего репозитория
 const BASE_PATH = "/stealth-connect"; 
 
 const App = () => (
