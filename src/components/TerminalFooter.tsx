@@ -21,7 +21,7 @@ export const TerminalFooter = () => {
     const interval = setInterval(() => {
       setMessages(prev => {
         const newMessages = [...prev, TERMINAL_MESSAGES[currentIndex]];
-        return newMessages.slice(-6); // Keep only last 6 messages
+        return newMessages.slice(-3); // Keep only last 3 messages
       });
       
       setCurrentIndex(prev => (prev + 1) % TERMINAL_MESSAGES.length);
@@ -31,20 +31,18 @@ export const TerminalFooter = () => {
   }, [currentIndex]);
 
   return (
-    <div className="glass dark:glass-dark border-t-2 border-border/50 py-4 font-mono text-xs sm:text-sm overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="space-y-1">
-          {messages.map((message, index) => (
-            <div
-              key={`${index}-${message}`}
-              className="animate-fade-in text-muted-foreground flex items-center gap-2"
-            >
-              <span className="text-primary">{'>'}</span>
-              <span className="text-green-500">[VPN]</span>
-              <span>{message}</span>
-            </div>
-          ))}
-        </div>
+    <div className="mt-4 glass dark:glass-dark border border-border/50 rounded-lg p-3 font-mono text-xs overflow-hidden">
+      <div className="space-y-1">
+        {messages.map((message, index) => (
+          <div
+            key={`${index}-${message}`}
+            className="animate-fade-in text-muted-foreground flex items-center gap-2"
+          >
+            <span className="text-primary">{'>'}</span>
+            <span className="text-green-500">[VPN]</span>
+            <span className="truncate">{message}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

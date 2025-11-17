@@ -255,15 +255,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Terminal Footer */}
-      <TerminalFooter />
-      
       {/* Footer */}
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-4">
-          <p className="text-center text-muted-foreground">
+          <p className="text-center text-muted-foreground mb-4">
             <DecryptText text="© 2024 VPN Service. Ваша приватность защищена." speed={3} />
           </p>
+          <TerminalFooter />
         </div>
       </footer>
     </div>
