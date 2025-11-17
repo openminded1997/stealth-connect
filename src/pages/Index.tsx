@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Shield, Zap, Globe, Eye, Wifi, Lock, ArrowRight, Sun, Moon, Server, Cloud } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { DecryptText } from "@/components/DecryptText";
+import { TerminalFooter } from "@/components/TerminalFooter";
 
 const Index = () => {
   const telegramBotUrl = "https://example.com"; // Замените на ссылку вашего бота
@@ -100,12 +102,14 @@ const Index = () => {
             {/* Glass Card */}
             <div className="glass dark:glass-dark rounded-3xl p-12 shadow-2xl">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Ваша приватность —{" "}
-                <span className="text-gradient">наш приоритет</span>
+                <DecryptText text="Ваша приватность — " speed={25} />
+                <span className="text-gradient">
+                  <DecryptText text="наш приоритет" speed={25} />
+                </span>
               </h1>
               
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto px-4">
-                Премиум VPN-сервис для безопасного и свободного интернета
+                <DecryptText text="Премиум VPN-сервис для безопасного и свободного интернета" speed={20} />
               </p>
               
               <div className="flex justify-center">
@@ -131,7 +135,7 @@ const Index = () => {
       <section className="py-24 relative">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Почему выбирают нас
+            <DecryptText text="Почему выбирают нас" speed={30} />
           </h2>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
@@ -144,8 +148,12 @@ const Index = () => {
                   <feature.icon className="w-6 h-6 text-primary" />
                 </div>
                 
-                <h3 className="text-lg sm:text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-3">
+                  <DecryptText text={feature.title} speed={35} />
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <DecryptText text={feature.description} speed={25} />
+                </p>
               </div>
             ))}
           </div>
@@ -156,10 +164,10 @@ const Index = () => {
       <section className="py-16 sm:py-24 relative">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">
-            Тарифные планы
+            <DecryptText text="Тарифные планы" speed={30} />
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-12 sm:mb-16 max-w-2xl mx-auto px-4">
-            Выберите оптимальный план для ваших потребностей
+            <DecryptText text="Выберите оптимальный план для ваших потребностей" speed={25} />
           </p>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
@@ -228,11 +236,11 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="glass dark:glass-dark rounded-3xl p-8 sm:p-12 md:p-16 max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Начните прямо сейчас
+              <DecryptText text="Начните прямо сейчас" speed={30} />
             </h2>
             
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Свяжитесь с нами в Telegram для получения персонального тарифа и подробной консультации
+              <DecryptText text="Свяжитесь с нами в Telegram для получения персонального тарифа и подробной консультации" speed={20} />
             </p>
             
             <Button 
@@ -247,11 +255,14 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Terminal Footer */}
+      <TerminalFooter />
+      
       {/* Footer */}
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-4">
           <p className="text-center text-muted-foreground">
-            © 2024 VPN Service. Ваша приватность защищена.
+            <DecryptText text="© 2024 VPN Service. Ваша приватность защищена." speed={35} />
           </p>
         </div>
       </footer>
