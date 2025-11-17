@@ -102,14 +102,14 @@ const Index = () => {
             {/* Glass Card */}
             <div className="glass dark:glass-dark rounded-3xl p-12 shadow-2xl">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                <DecryptText text="Ваша приватность — " speed={8} />
+                <DecryptText text="Ваша приватность — " speed={2} />
                 <span className="text-gradient">
-                  <DecryptText text="наш приоритет" speed={8} />
+                  <DecryptText text="наш приоритет" speed={2} />
                 </span>
               </h1>
               
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto px-4">
-                <DecryptText text="Премиум VPN-сервис для безопасного и свободного интернета" speed={6} />
+                <DecryptText text="Премиум VPN-сервис для безопасного и свободного интернета" speed={2} />
               </p>
               
               <div className="flex justify-center">
@@ -135,7 +135,7 @@ const Index = () => {
       <section className="py-24 relative">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            <DecryptText text="Почему выбирают нас" speed={10} />
+            <DecryptText text="Почему выбирают нас" speed={3} />
           </h2>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
@@ -149,10 +149,10 @@ const Index = () => {
                 </div>
                 
                 <h3 className="text-lg sm:text-xl font-bold mb-3">
-                  <DecryptText text={feature.title} speed={10} />
+                  <DecryptText text={feature.title} speed={3} />
                 </h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  <DecryptText text={feature.description} speed={8} />
+                  <DecryptText text={feature.description} speed={2} />
                 </p>
               </div>
             ))}
@@ -164,10 +164,10 @@ const Index = () => {
       <section className="py-16 sm:py-24 relative">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">
-            <DecryptText text="Тарифные планы" speed={10} />
+            <DecryptText text="Тарифные планы" speed={3} />
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground text-center mb-12 sm:mb-16 max-w-2xl mx-auto px-4">
-            <DecryptText text="Выберите оптимальный план для ваших потребностей" speed={8} />
+            <DecryptText text="Выберите оптимальный план для ваших потребностей" speed={2} />
           </p>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
@@ -236,11 +236,11 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="glass dark:glass-dark rounded-3xl p-8 sm:p-12 md:p-16 max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              <DecryptText text="Начните прямо сейчас" speed={10} />
+              <DecryptText text="Начните прямо сейчас" speed={3} />
             </h2>
             
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              <DecryptText text="Свяжитесь с нами в Telegram для получения персонального тарифа и подробной консультации" speed={6} />
+              <DecryptText text="Свяжитесь с нами в Telegram для получения персонального тарифа и подробной консультации" speed={2} />
             </p>
             
             <Button 
@@ -262,7 +262,7 @@ const Index = () => {
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-4">
           <p className="text-center text-muted-foreground">
-            <DecryptText text="© 2024 VPN Service. Ваша приватность защищена." speed={12} />
+            <DecryptText text="© 2024 VPN Service. Ваша приватность защищена." speed={3} />
           </p>
         </div>
       </footer>
