@@ -12,7 +12,7 @@ const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#
 export const DecryptText = ({ 
   text, 
   className = '', 
-  speed = 30
+  speed = 40
 }: DecryptTextProps) => {
   const [displayText, setDisplayText] = useState(text.split('').map(() => ''));
   const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.1 });
